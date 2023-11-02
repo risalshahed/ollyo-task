@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "array-move": "^4.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-sortable-hoc": "^2.0.0",
+    "react-tinder-card": "^1.6.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

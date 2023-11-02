@@ -15,7 +15,8 @@ function App() {
   }, [])
 
   return (
-    <DataContext.Provider value={images}>
+    // <DataContext.Provider value={{value: [images, setImages]}}>
+    <DataContext.Provider value={[images, setImages]}>
       <div className='app'>
         <Header />
         <Home />
