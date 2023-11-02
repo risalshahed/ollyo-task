@@ -31,7 +31,6 @@ header {
   margin: auto;
 }
 
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,18 +38,19 @@ header {
   margin: 8px;
 }
 
-.each-img {
+.img-container {
   border: 1px solid #ddd;
   border-radius: 8px;
   position: relative;
 }
 
-.each-img:hover img {
+.img-container:hover img {
+  filter: brightness(50%);
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-.each-img img {
+.img-container img {
   border: 1px solid red;
   /* background-color: rgba(0, 0, 0); */
 }
