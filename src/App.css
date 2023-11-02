@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: #ccc;
+}
+
+header, .home {
+  margin: auto;
+  background-color: #fff;
+  padding: 24px 80px;
+}
+
+header {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding: 24px 80px;
+}
+
+.home-top {
+  width: 75%;
+  margin: auto;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 8px;
+}
+
+.each-img {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+}
+
+.each-img:hover img {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.each-img img {
+  border: 1px solid red;
+  /* background-color: rgba(0, 0, 0); */
+}
+
+.input {
+  position: absolute;
+  left: 0;
+  /* z-index: 2; */
+  margin: 25px;
+  cursor: pointer;
+}
