@@ -9,22 +9,24 @@ export default function Gallery() {
   // const [images, setImages] = value;
   console.log(images);
 
-  const theImages = images?.map(image => <Image key={image.id} image={image} />)
+  const theImages = images?.map(image =>
+    <Image key={image.id} image={image} />
+  )
 
   // console.log(theImages);
 
-  const SortableItem = SortableElement(({ image, index }) => (
-    <Image key={image.id} image={image} index={index} />
+  const SortableItem = SortableElement(({ value, index }) => (
+    <Image key={value.id} image={value} index={index} />
   ))
 
   // console.log(SortableItem);
 
-  const SortableImages = SortableContainer(({ images }) => {
-    // console.log(images);
+  const SortableImages = SortableContainer(({ items }) => {
+    // console.log(items);
 
     return (
       <div className="gallery">
-        {images?.sort((a, b) => a.position - b.position)
+        {items?.sort((a, b) => a.position - b.position)
           .map((image, index) => (
             <SortableItem
               key={image.id}
@@ -37,14 +39,16 @@ export default function Gallery() {
     )
   })
 
-  // setImages(1);
-  // console.log(images);
+  // // setImages(1);
+  // // console.log(images);
 
-  console.log(SortableImages);
+  // console.log(SortableImages);
 
   const handleSort = ({ oldIndex, newIndex }) => {
-    let arr = arrayMove(theImages, oldIndex, newIndex);
-    console.log(arr);
+    let arr = arrayMove(images, oldIndex, newIndex);
+    
+    console.log('arr', arr);
+
     for (let i = 0; i < arr.length; i++) {
       arr[i].position = i;
     }
@@ -56,7 +60,7 @@ export default function Gallery() {
       {/* <div className="gallery">
         {theImages}
       </div> */}
-      <SortableImages items={theImages} onSortEnd={handleSort} axis='xy' />
+      <SortableImages items={images} onSortEnd={handleSort} axis='xy' />
     </>
   )
 }
